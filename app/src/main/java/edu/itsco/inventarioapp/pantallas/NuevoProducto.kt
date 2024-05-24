@@ -23,16 +23,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import edu.itsco.inventarioapp.navegacion.Pantallas
-import edu.itsco.inventarioapp.ui.theme.InventarioAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NuevoProductoScreen(navController: NavController){
+fun NuevoProductoScreen(navController: NavController, viewModel: ProductoViewModel){
     Scaffold (
         topBar = {
             TopAppBar(
@@ -93,15 +90,16 @@ fun Formulario(modifier: Modifier = Modifier, navController: NavController){
                 keyboardType = KeyboardType.Number
             )
         )
-        Row (modifier =
+        Row (
+            modifier =
             Modifier
                 .fillMaxWidth()
                 .padding(all = 8.dp)
-
-            ){
-            Button(onClick = {
-
-            }) {
+        ){
+            Button(
+                onClick = {
+                }
+            ) {
                 Text(text = "Guardar")
             }
             OutlinedButton(onClick = {
@@ -115,10 +113,10 @@ fun Formulario(modifier: Modifier = Modifier, navController: NavController){
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewNuevoProducto(){
-    InventarioAppTheme {
-        NuevoProductoScreen(navController = rememberNavController())
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun PreviewNuevoProducto(){
+//    InventarioAppTheme {
+//        NuevoProductoScreen(navController = rememberNavController())
+//    }
+//}

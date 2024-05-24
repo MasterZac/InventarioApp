@@ -22,14 +22,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import edu.itsco.inventarioapp.data.Producto
 import edu.itsco.inventarioapp.navegacion.Pantallas
-import edu.itsco.inventarioapp.ui.theme.InventarioAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(navController: NavHostController){
+fun HomeScreen(navController: NavHostController, viewModel: ProductoViewModel){
     Scaffold(
         topBar = {
             TopAppBar(
@@ -132,10 +130,10 @@ fun ProductoCardPreview(){
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun HomePreview(){
-    InventarioAppTheme {
-        HomeScreen(navController = rememberNavController())
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun HomePreview(){
+//    InventarioAppTheme {
+//        HomeScreen(navController = rememberNavController())
+//    }
+//}
